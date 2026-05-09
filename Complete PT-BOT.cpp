@@ -63,13 +63,13 @@ uint8_t getControllerData(ControllerData_t* ControllerData) {
 
 float Power_FL, Power_FR, Power_BL, Power_BR;
 float yawOffset = 0;
-int spd = 40;
+int spd = 60;
 
 // Arduino setup function. Runs in CPU 1
 void setup() {
     Serial.begin(115200);
     initialize();
-    servoWrite(0, 130);
+    servoWrite(0, 150);
     // calibrateIMU();
 
     // yawOffset = angleRead(YAW);
@@ -170,6 +170,6 @@ void grab() {
         servoWrite(0, 105);
     }
     else if (controller.r1 or controller.triangle) {
-        servoWrite(0, 130);
+        servoWrite(0, 140);
     }
 }
